@@ -17,6 +17,7 @@ module.exports = {
       'prismjs/components/prism-css.min.js',
       'prismjs/components/prism-elixir.min.js',
       'prismjs/components/prism-ruby.min.js',
+      'prismjs/components/prism-fsharp.min.js',
 
       // CSS
       'prismjs/plugins/line-highlight/prism-line-highlight.css',
