@@ -397,12 +397,45 @@ let (x, y) = (1, 2)
 
 See [Pattern Matching](https://docs.microsoft.comdotnet/fsharp/language-reference/pattern-matching) for more.
 
+## Error management
+{: .-three-column}
+
+### Options
+
+```fsharp
+let rec tryFindMatch pred list =
+    match list with
+    | head :: tail ->
+        if pred head then
+            Some head
+        else
+            tryFindMatch pred tail
+    | [] ->
+        None
+
+let lst = [ 5; 4; 3; 2 ]
+let pred = fun x -> x < 3
+
+let res = tryFindMatch pred lst
+match res with
+| Some x -> printfn "%d is < 3" x
+| None -> printfn "Nothing under 3"
+```
+
+See [Options](https://docs.microsoft.com/dotnet/fsharp/language-reference/options) for more.
+
+### Results
+
+```fsharp
+
+```
+
 ## Object programming
 {: .-three-column}
 
 ### Classes
 
-#### Class declaration with members and interface implementation
+#### Class declaration
 
 ```fsharp
 type CustomerName(first, middle, last) =
